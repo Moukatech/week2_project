@@ -3,29 +3,38 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Week2 Project</title>
     
   </head>
   <body>
-      <h1>Learn your Akan Name</h1>
+    <div class = "data-container">
+      <div class="left-container">
+        <h1>Learn your Akan Name</h1>
+        <div class = "culture">
+          <img class="img" src="assets/pic.jpeg">
+        </div>
+      </div>
+      <div class ="right-container">
       <form name="user_form"class="form-inline">
         <div class="form-group">
           <label>DOB:</label>
-          <input id="user_DOB" name="user_DOB" type="text"required placeholder="dd/mm/yyyy">
+          <input id="user_DOB" name="user_DOB" type="text"required placeholder="DD/MM/YYYY">
         </div>
         <div>
             <label>Gender:</label>
             <select class="form-control" id="gender" name="gender">
 				<option>Male</option>
 				<option>Female</option>
-			</select>
+			  </select>
         </div>
-        <div>
-          <input id="submit" type="submit" value="submit" onclick="return user_Action()">
-        </div>
-      </form>
+          <div>
+          <input id="submit" type="submit" value="Submit" onclick="return user_Action()">
+          </div>
+        </form>
+      </div>
       <script type="text/javascript" src="js/logic.js"></script>
+    </div>
   </body>
 </html>

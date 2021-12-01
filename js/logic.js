@@ -42,38 +42,39 @@ function user_Action(){
     function month (MM){
         return(26 * (MM + 1) / 10);
     }
+
+    // this function splits the century of that year entered
     function centuryFromYear(year) {
         return Math.ceil(year/100)
     }
     
-    //var enterCentury  = centuryFromYear(regs[3])
+    var enterCentury  = centuryFromYear(regs[3]) 
     var enterYear  = regs[3]
     var enterMonth  = regs[2]
     var enterDate  = regs[1]
-    var gender = document.getElementById('gender').value
-    Century = enterYear.substr(0,2);
-    Year = enterYear.substr(2,2);
-    
-    alert(Century)
-    alert(Year)
+    var gender = document.getElementById('gender').value // picks the genter entered in the dropdown 
+    //Century = enterYear.substr(0,2); // picks the century
+    Year = enterYear.substr(2,2); // picks the year 
 
-    const birthCentury = century(Century)
+    alert('You were born in the ' + Year + ' year of the ' + enterCentury + ' Century')
+    
+
+    const birthCentury = century(enterCentury)
     const birthYear = year(Year)
     const birthMonth = month(enterMonth)
 
     var calculationResults = (birthCentury + birthYear + birthMonth + enterDate) % 7
-    const wholeNumber = calculationResults.toPrecision(0);
-    alert(wholeNumber)
+    const wholeNumber = calculationResults.toPrecision(1);
+    //alert(wholeNumber)
     var result;
     if (gender == "Male"){
         result = maleNames[wholeNumber]
-        alert(result)
+        
     }else if (gender == "Female"){
         result = femaleNames[wholeNumber]
-        alert(result)
     }else{
     }
-    // alert(result)
-    // return true;
+    alert('And So Your Akana  day name is :' + result)
+    return true;
 }
 }
